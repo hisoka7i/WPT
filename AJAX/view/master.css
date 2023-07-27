@@ -1,0 +1,54 @@
+button{
+  border: none;
+  opacity: 0.9;
+  height: 40px;
+  border-radius: 15px;
+  margin: 5px;
+  font-weight: 600;
+}
+.input1{
+  opacity: 0.6;
+  height: 35px;
+  border-radius: 10px;
+  border-style: none;
+  display: block;
+}
+
+select{
+  opacity: 0.8;
+}
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ gap: 5px;
+
+}
+.container .level2{
+  color: #5F264A;
+  font-family: 'Bruno Ace SC', cursive;
+  justify-content: space-between;
+}
+.container_main{
+  display: grid;
+  height: 100vh;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+#output {
+  visibility: hidden;
+}
+
+#output1{
+  opacity: 0.5;
+  visibility: hidden;
+}
+label{
+  font-style: italic;
+}
+.level1{
+  z-index: 1;
+}

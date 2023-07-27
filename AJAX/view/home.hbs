@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="master.css">
+    <script>
+    function firequery(){
+      document.getElementById('btn1').style.visibility="visible";
+      document.getElementById('btn2').style.visibility="visible";
+      let http = new XMLHttpRequest();
+      http.onload=function(){
+        let output = JSON.parse(http.response);
+        console.log(http.response);
+        console.log(output);
+        document.getElementById('btn1').innerHTML=`${output.message}`;
+        document.getElementById('btn2').innerHTML=`${http.upload}`;
+      };
+      http.open("get","http://localhost:3000/message");
+      http.send();
+    }
+    function firequery2(){
+      let http = new XMLHttpRequest();
+      http.open("get","https://reqres.in/api/users?page=2");
+      http.send();
+      http.onload=function(){
+        let output = JSON.parse(http.response);
+        console.log(output.data);
+      //  document.getElementById('p1').innerHTML=`<img src=${output.avatar} />`
+      let docarr = output.data.map((e)=> {return `<button>${e.first_name}${e.email}</button><br />`;
+    });
+       document.getElementById('p1').innerHTML=docarr.join("");
+     };
+    }
+    function firequery3(){
+      let http = new XMLHttpRequest();
+      let x = document.getElementById('input_ajax3').value;
+      let url = `https://reqres.in/api/users?page=${x}`;
+      console.log(url);
+      http.open("get",url);
+      http.send();
+      http.onload=function(){
+        let output = JSON.parse(http.response);
+        console.log(output);
+        let docarr = output.data.map((e)=>{return `<button>${e.first_name}${e.email}</button><br />`});
+        document.getElementById('p2').innerHTML=docarr.join("");
+      }
+    }
+  </script>
+  </head>
+  <body>
+    <div class="container_main">
+      <div class="container" style="background-color: #F7E1AE;">
+        <h2 class="level2">Ajax 1 </h2>
+        <button type="button" onclick="firequery()" name="button">FireQuery</button>
+        <button type="button" name="button" id="btn1" style="visibility: hidden"></button>
+        <button type="button" name="button" id="btn2" style="visibility: hidden"></button>
+      </div>
+
+    <div class="container" style="background-color: #ECC9EE;">
+      <h2 class="level2">Ajax 2 using API</h2>
+      <button type="button" onclick="firequery2()" name="button">FireQuery</button>
+      <p class="level2" id="p1"></p>
+    </div>
+
+    <div class="container" style="background-color: #57C5B6;">
+      <h2 class="level2">Ajax 3 query Input</h2>
+      <input class="input1" type="number" id="input_ajax3" placeholder="Enter Page no of API" value="">
+      <button type="button" onclick="firequery3()" name="button">FireQuery</button>
+      <p id="p2"></p>
+    </div>
+
+
+    <div class="container" style="background-color: #B4E4FF;">
+      <h2 class="level2">Assignment 4</h2>
+
+    </div>
+  </div>
+
+  </body>
+</html>

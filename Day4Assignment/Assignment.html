@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Calulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+    <h1 class="level1"><img src="assignment.svg" alt="" style="height: 40px;" ></h1>
+    <div class="container_main">
+      <div class="container" style="background-color: #F7E1AE;">
+        <h2 class="level2">Assignment 1</h2>
+          <input class='input1' type="number" id="number1" value="1" />
+          <input class='input1' type="number" id="number2" value="2" />
+          <select id="s1" onchange="f1()">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+          <button type="button" name="button" onclick="fun2()">Clear</button>
+          <button id="output"></button>
+      </div>
+    <div class="container" style="background-color: #ECC9EE;">
+      <h2 class="level2">Assignment 2</h2>
+      <input class="input1" type="number" id="number3" name="" value="10">
+      <table>
+        <tr>
+          <td>
+            <select id="s1">
+         <option value="dollar">dollar</option>
+         <option value="Rupee">Rupee</option>
+         <option value="euro">euro</option>
+      </select>
+        </td>
+          <td>
+            <select id="s2">
+         <option value="dollar">dollar</option>
+         <option value="Rupee">Rupee</option>
+         <option value="euro">euro</option>
+      </select>
+        </td>
+        </tr>
+      </table>
+      <button type="button" onclick="convert()" name="button">Convert</button>
+      <p style="opacity: 0.9;" id="p1"></p>
+    </div>
+
+    <div class="container" style="background-color: #57C5B6;">
+      <h2 class="level2">Assignment 3</h2>
+      <input class="input1" type="text" id="number4" value="Click Checkbox to stop input" />
+      <table>
+        <tr>
+          <td><label for="Checkbox1">Click ME!!</label></td>
+          <td><input onclick="stop()" type="checkbox" id="Checkbox1" class="input1"></td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="container" style="background-color: #B4E4FF;">
+      <h2 class="level2">Assignment 4</h2>
+      <input class="input1" type="number" id="number5" value="0" />
+      <table>
+        <tr>
+          <td><label for="radio1">For Sqaure:</label></td>
+          <td><input onclick="assignment4('sq')" class="input1 radio" type="radio" id="radio1" name="rradio"></input></td>
+        </tr>
+        <tr>
+          <td><label for="radio2">For Cube:</label></td>
+          <td><input onclick="assignment4('cube')" class="input1 radio" type="radio" id="radio2" name="rradio"></input></td>
+        </tr>
+        <tr>
+          <td><label for="radio3">To Print the same value :</label></td>
+          <td><input onclick="assignment4('same')" class="input1 radio" type="radio" id="radio3" name="rradio"></input></td>
+        </tr>
+      </table>
+      <button id="output1"></button>
+    </div>
+  </div>
+  <script type="text/javascript" src="javascript.js"></script>
+  </body>
+</html>
